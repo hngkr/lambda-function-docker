@@ -31,7 +31,7 @@ resource "null_resource" "build" {
     interpreter = ["python3"]
     command = "${path.module}/scripts/build.py"
 
-    environment {
+    environment = {
       OUTPUT_FILEPATH   = data.external.needs_rebuild.result["output_filepath"]
       PROJECT_PATH      = var.project_path
       REQUIREMENTS_FILE = local.requirements_file
