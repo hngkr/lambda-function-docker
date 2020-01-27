@@ -12,7 +12,6 @@ import os
 import sys
 
 from functools import wraps
-from past.builtins import basestring
 
 # -- helpers --
 
@@ -33,7 +32,7 @@ def validate(data):
     if not isinstance(data, dict):
         error('Data must be a dictionary.')
     for value in data.values():
-        if not isinstance(value, basestring):
+        if not isinstance(value, str):
             error('Values must be strings.')
 
 
