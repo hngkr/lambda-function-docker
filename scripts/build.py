@@ -75,7 +75,7 @@ def install_requirements(venv_dir, project_dirname, requirements_file):
 def make_zipfile(venv_dir, project_dirname, tf_project_path, tf_lib_path, tf_output_filepath):
     with cd(os.path.join(venv_dir, "..")):
         # Copy scripts from terraform module variables into project dir
-        if tf_lib_path != 'none':
+        if tf_lib_path != 'null':
             distutils.dir_util.copy_tree(tf_lib_path, project_dirname)
         distutils.dir_util.copy_tree(tf_project_path, project_dirname)
 
